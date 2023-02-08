@@ -1,24 +1,25 @@
 import CustomButton from '../CustomButton';
+import './index.css';
 
 const FormInformation = ({
-  handleSubmit
+  handleSubmit,
 }) => {
 
   return (
-    <section >
+    <section className="form__container">
       <h3>Nuevo Pokemon</h3>
       <form onSubmit={handleSubmit} aria-label="Pokemon Form" >
-        <div >
-          <div >
+        <div className='form__content'>
+          <div className='form__name'>
             <label htmlFor="name">Nombre:</label>
             <input
               aria-label="Name"
-              value={"formData?.name"}
+              value={""}
               name="name"
               type="text"
             />
           </div>
-          <div >
+          <div className='form__attack'>
             <label htmlFor="price">Ataque:</label>
             0<input
               aria-label="Attack"
@@ -30,7 +31,7 @@ const FormInformation = ({
               step="1"
             />100
           </div>
-          <div >
+          <div className='form__image'>
             <label htmlFor="image">Imagen:</label>
             <input
               aria-label="image"
@@ -39,7 +40,7 @@ const FormInformation = ({
               type="text"
             />
           </div>
-          <div >
+          <div className='form__defense'>
             <label htmlFor="defense">Defensa:</label>
             0<input
               aria-label="Defense"
@@ -51,7 +52,7 @@ const FormInformation = ({
               step="1"
             />100
           </div>
-          <div >
+          <div className='form__buttons'>
             <CustomButton >Cancelar</CustomButton>
             <CustomButton type="submit">Guardar</CustomButton>
           </div>
