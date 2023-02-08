@@ -21,5 +21,27 @@ describe("should be render correctly", () => {
     expect(searchInput).toBeInTheDocument();
   })
 
+  test("should display a table with a list of pokemons", async () => {
+    render(<Home />)
+    const searchInput = screen.getByRole("table", { name: /table/i });
+    expect(searchInput).toBeInTheDocument();
+
+    const nameColumn = screen.getByRole("columnheader", { name: /nombre/i });
+    expect(nameColumn).toBeInTheDocument();
+
+    const imageColumn = screen.getByRole("columnheader", { name: /imagen/i });
+    expect(imageColumn).toBeInTheDocument();
+
+    const attackColumn = screen.getByRole("columnheader", { name: /ataque/i });
+    expect(attackColumn).toBeInTheDocument();
+
+    const defenseColumn = screen.getByRole("columnheader", { name: /defensa/i });
+    expect(defenseColumn).toBeInTheDocument();
+
+    const actionsColumn = screen.getByRole("columnheader", { name: /acciones/i });
+    expect(actionsColumn).toBeInTheDocument();
+
+  })
+
 
 })

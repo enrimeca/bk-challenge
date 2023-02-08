@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Search from '../../components/Search'
 import CustomButton from '../../components/CustomButton';
+import Table from '../../components/Table';
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState([]);
@@ -19,6 +20,9 @@ const Home = () => {
         </div>
       </header>
       <main>
+        <Table>
+
+        </Table>
       </main>
     </div>
   )
