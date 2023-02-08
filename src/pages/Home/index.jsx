@@ -1,11 +1,18 @@
-import React from 'react'
+import { useState } from 'react';
+import Search from '../../components/Search'
 
 const Home = () => {
+  const [searchValue, setSearchValue] = useState([]);
   return (
     <div className="home__container">
       <header>
         <h2>Listado de Pokemon</h2>
-
+        <div>
+          <Search
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </div>
       </header>
       <main>
       </main>

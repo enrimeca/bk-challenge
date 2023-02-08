@@ -9,4 +9,10 @@ describe("should be render correctly", () => {
     expect(mainTitle).toBeInTheDocument();
   })
 
+  test("should display a search input in the Home Page", async () => {
+    render(<Home />)
+    const searchInput = screen.getByRole("textbox", { name: /search/i });
+    expect(searchInput).toBeInTheDocument();
+  })
+
 })
