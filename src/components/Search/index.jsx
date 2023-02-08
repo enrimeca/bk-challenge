@@ -12,7 +12,7 @@ const Search = ({
 
   return (
     <section >
-      <SearchIcon />
+      <SearchIcon className='search__section' />
       <input
         aria-label="search"
         type="text"

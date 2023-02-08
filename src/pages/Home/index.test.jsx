@@ -15,4 +15,11 @@ describe("should be render correctly", () => {
     expect(searchInput).toBeInTheDocument();
   })
 
+  test("should display a button to create a new pokemon", async () => {
+    render(<Home />)
+    const searchInput = screen.getByRole("button", { name: /nuevo/i });
+    expect(searchInput).toBeInTheDocument();
+  })
+
+
 })

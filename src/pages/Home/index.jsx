@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Search from '../../components/Search'
+import CustomButton from '../../components/CustomButton';
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState([]);
@@ -12,6 +13,9 @@ const Home = () => {
             searchValue={searchValue}
             setSearchValue={setSearchValue}
           />
+          <CustomButton>
+            Nuevo
+          </CustomButton>
         </div>
       </header>
       <main>
