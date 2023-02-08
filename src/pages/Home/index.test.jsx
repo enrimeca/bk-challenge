@@ -40,8 +40,30 @@ describe("should be render correctly", () => {
 
     const actionsColumn = screen.getByRole("columnheader", { name: /acciones/i });
     expect(actionsColumn).toBeInTheDocument();
-
   })
 
+  test("should display a form where can register or modify a pokemon", async () => {
+    render(<Home />)
+    const form = screen.getByRole("form", { name: /Pokemon Form/i });
+    expect(form).toBeInTheDocument();
+
+    const nameInput = screen.getByRole("textbox", { name: /Name/i });
+    expect(nameInput).toBeInTheDocument();
+
+    const imageInput = screen.getByRole("textbox", { name: /image/i });
+    expect(imageInput).toBeInTheDocument();
+
+    const attackSlider = screen.getByRole("slider", { name: /attack/i });
+    expect(attackSlider).toBeInTheDocument();
+
+    const defenseColumn = screen.getByRole("slider", { name: /defense/i });
+    expect(defenseColumn).toBeInTheDocument();
+
+    const cancelButton = screen.getByRole("button", { name: /cancelar/i });
+    expect(cancelButton).toBeInTheDocument();
+
+    const saveButton = screen.getByRole("button", { name: /guardar/i });
+    expect(saveButton).toBeInTheDocument();
+  })
 
 })

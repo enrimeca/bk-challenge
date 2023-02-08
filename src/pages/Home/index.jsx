@@ -2,9 +2,15 @@ import { useState } from 'react';
 import Search from '../../components/Search'
 import CustomButton from '../../components/CustomButton';
 import Table from '../../components/Table';
+import FormInformation from '../../components/FormInformation';
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState([]);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+  }
+
   return (
     <div className="home__container">
       <header>
@@ -23,6 +29,9 @@ const Home = () => {
         <Table>
 
         </Table>
+        <FormInformation
+          handleSubmit={handleSubmit}
+        />
       </main>
     </div>
   )
