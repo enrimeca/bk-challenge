@@ -6,10 +6,19 @@ import FormInformation from '../../components/FormInformation';
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
 
 
   const handleSubmit = event => {
     event.preventDefault();
+  }
+
+  const handleEdit = (id) => {
+    console.log("Editing")
+  }
+
+  const handleDelete = (id) => {
+    console.log("Deleting")
   }
 
 
@@ -29,7 +38,9 @@ const Home = () => {
       </header>
       <main>
         <Table
-
+          pokemons={pokemons}
+          handleEdit={handleEdit}
+          handleDelete={handleDelete}
         />
         <FormInformation
           handleSubmit={handleSubmit}

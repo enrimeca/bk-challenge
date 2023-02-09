@@ -4,7 +4,9 @@ import { ReactComponent as Delete } from '../../assets/images/delete.svg';
 import './index.css';
 
 const Table = ({
-  pokemons
+  pokemons,
+  handleEdit,
+  handleDelete
 }) => {
 
   return (
@@ -31,8 +33,8 @@ const Table = ({
                   <td>{attack}</td>
                   <td>{defense}</td>
                   <td>
-                    <Edit onClick={() => { }} />
-                    <Delete onClick={() => { }} />
+                    <Edit role="img" aria-label='edit-icon' onClick={() => handleEdit(id)} />
+                    <Delete role="img" aria-label='delete-icon' onClick={() => handleDelete(id)} />
                   </td>
                 </tr>
               ))
