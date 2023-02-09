@@ -44,6 +44,13 @@
   "jest": {
     "moduleNameMapper": {
       "axios": "axios/dist/node/axios.cjs"
-    }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,tsx,ts}",
+      "!src/**/*.stories.{js,jsx,tsx,ts}",
+      "!src/**/*serviceWorker.ts",
+      "!src/**/*setupProxy.js",
+      "!src/**/*index.js"
+    ]
   }
 }

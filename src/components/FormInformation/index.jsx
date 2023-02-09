@@ -2,7 +2,11 @@ import CustomButton from '../CustomButton';
 import './index.css';
 
 const FormInformation = ({
+  formData,
+  handleInputChange,
+  handleSliderChange,
   handleSubmit,
+  handleCancel,
 }) => {
 
   return (
@@ -14,8 +18,9 @@ const FormInformation = ({
             <label htmlFor="name">Nombre:</label>
             <input
               aria-label="Name"
-              value={""}
+              value={formData?.name}
               name="name"
+              onChange={handleInputChange}
               type="text"
             />
           </div>
@@ -23,8 +28,9 @@ const FormInformation = ({
             <label htmlFor="price">Ataque:</label>
             0<input
               aria-label="Attack"
-              value={0}
+              value={formData?.attack}
               name="attack"
+              onChange={e => handleSliderChange("attack", e.target.value)}
               type="range"
               min="0"
               max="100"
@@ -35,8 +41,9 @@ const FormInformation = ({
             <label htmlFor="image">Imagen:</label>
             <input
               aria-label="image"
-              value={""}
+              value={formData?.image}
               name="image"
+              onChange={handleInputChange}
               type="text"
             />
           </div>
@@ -44,8 +51,9 @@ const FormInformation = ({
             <label htmlFor="defense">Defensa:</label>
             0<input
               aria-label="Defense"
-              value={0}
+              value={formData?.defense}
               name="defense"
+              onChange={e => handleSliderChange("defense", e.target.value)}
               type="range"
               min="0"
               max="100"
@@ -53,7 +61,7 @@ const FormInformation = ({
             />100
           </div>
           <div className='form__buttons'>
-            <CustomButton >Cancelar</CustomButton>
+            <CustomButton onClick={handleCancel}>Cancelar</CustomButton>
             <CustomButton type="submit">Guardar</CustomButton>
           </div>
         </div>
