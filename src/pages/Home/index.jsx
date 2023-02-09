@@ -7,9 +7,11 @@ import FormInformation from '../../components/FormInformation';
 const Home = () => {
   const [searchValue, setSearchValue] = useState([]);
 
+
   const handleSubmit = event => {
     event.preventDefault();
   }
+
 
   return (
     <div className="home__container">
@@ -26,9 +28,9 @@ const Home = () => {
         </div>
       </header>
       <main>
-        <Table>
+        <Table
 
-        </Table>
+        />
         <FormInformation
           handleSubmit={handleSubmit}
         />

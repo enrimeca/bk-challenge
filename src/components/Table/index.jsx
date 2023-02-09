@@ -1,4 +1,12 @@
-const Table = () => {
+import { ReactComponent as Edit } from '../../assets/images/edit.svg';
+import { ReactComponent as Delete } from '../../assets/images/delete.svg';
+
+import './index.css';
+
+const Table = ({
+  pokemons
+}) => {
+
   return (
     <>
       <section className='table__container'>
@@ -13,7 +21,22 @@ const Table = () => {
             </tr>
           </thead>
           <tbody>
-
+            {
+              pokemons?.map(({ id, name, image, attack, defense }) => (
+                <tr key={id}>
+                  <td>{name}</td>
+                  <td>
+                    <img alt="" src={image} />
+                  </td>
+                  <td>{attack}</td>
+                  <td>{defense}</td>
+                  <td>
+                    <Edit onClick={() => { }} />
+                    <Delete onClick={() => { }} />
+                  </td>
+                </tr>
+              ))
+            }
           </tbody>
         </table>
       </section>

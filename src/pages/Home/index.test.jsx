@@ -17,14 +17,14 @@ describe("should be render correctly", () => {
 
   test("should display a button to create a new pokemon", async () => {
     render(<Home />)
-    const searchInput = screen.getByRole("button", { name: /nuevo/i });
-    expect(searchInput).toBeInTheDocument();
+    const addPokemonBtn = screen.getByRole("button", { name: /nuevo/i });
+    expect(addPokemonBtn).toBeInTheDocument();
   })
 
   test("should display a table with a list of pokemons", async () => {
     render(<Home />)
-    const searchInput = screen.getByRole("table", { name: /table/i });
-    expect(searchInput).toBeInTheDocument();
+    const table = screen.getByRole("table", { name: /table/i });
+    expect(table).toBeInTheDocument();
 
     const nameColumn = screen.getByRole("columnheader", { name: /nombre/i });
     expect(nameColumn).toBeInTheDocument();
