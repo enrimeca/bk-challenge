@@ -65,5 +65,15 @@ describe("should be render correctly", () => {
     const saveButton = screen.getByRole("button", { name: /guardar/i });
     expect(saveButton).toBeInTheDocument();
   })
+})
 
+describe("should get the information from the API", () => {
+  test("should get the pokemon list from de API", async () => {
+    render(<Home />)
+    const items = await screen.findAllByRole("cell");
+    expect(items.length).toBe(15);
+
+    const rows = await screen.findAllByRole('row')
+    expect(rows).toHaveLength(4);
+  })
 })
